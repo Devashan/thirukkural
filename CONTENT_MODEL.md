@@ -1,6 +1,6 @@
 # Content model (draft)
 
-This is a portable data contract, independent of any application database. It will be versioned before the first populated release. The detailed working definition is in [DEV-157](https://linear.app/devii-108/issue/DEV-157/define-mvp-content-model-and-translationtransliteration-rules).
+This is a portable data contract, independent of any application database. Schema 1 and its importer handoff are in [RELEASE_FORMAT.md](RELEASE_FORMAT.md) and [IMPORT_CONTRACT.md](IMPORT_CONTRACT.md). The detailed working definition is in [DEV-157](https://linear.app/devii-108/issue/DEV-157/define-mvp-content-model-and-translationtransliteration-rules).
 
 ## Identity and structure
 
