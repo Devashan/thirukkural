@@ -1,6 +1,6 @@
 # Content model (draft)
 
-This is a portable data contract, independent of any application database. Schema 1 and its importer handoff are in [RELEASE_FORMAT.md](RELEASE_FORMAT.md) and [IMPORT_CONTRACT.md](IMPORT_CONTRACT.md). The detailed working definition is in [DEV-157](https://linear.app/devii-108/issue/DEV-157/define-mvp-content-model-and-translationtransliteration-rules).
+This is the portable data model. Schema 1 is specified in [RELEASE_FORMAT.md](RELEASE_FORMAT.md).
 
 ## Identity and structure
 
@@ -19,7 +19,7 @@ Historical translations and our own future explanations are different content ty
 
 ## Romanisation
 
-Each generated result records the input identity, source-text hash, scheme ID and rule/engine version. Planned options are ISO 15919 (confirm the published standard's details before making conformance claims), a simple Latin spelling and a pronunciation-oriented reader spelling. The last option needs Tamil-speaker review before release. A reader may select any available scheme or hide transliteration in the app. No inherited third-party romanisation or unexplained per-verse overrides are shipped.
+Each generated result records the input identity, source-text hash, scheme ID and rule/engine version. Planned options are ISO 15919 (confirm the published standard's details before making conformance claims), a simple Latin spelling and a pronunciation-oriented reader spelling. The last option needs Tamil-speaker review before release. No inherited third-party romanisation or unexplained per-verse overrides are shipped.
 
 ## Future explanations
 
@@ -27,4 +27,4 @@ Modern English explanations are outside the initial dataset. If introduced, each
 
 ## Release checks
 
-Validate unique chapter/position keys, 133 × 10 Tamil entries, source revisions and hashes, Unicode handling, attribution, translation coverage per set, scheme freshness and absence of prohibited or unreviewed content. Emit a machine-readable manifest with the release. Keep public data versions separate from private app DB migrations.
+Validate unique chapter/position keys, 133 × 10 Tamil entries, source revisions and hashes, Unicode handling, attribution, translation coverage per set, scheme freshness and absence of prohibited or unreviewed content. Emit a machine-readable manifest with the release.

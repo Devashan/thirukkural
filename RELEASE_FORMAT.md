@@ -1,11 +1,11 @@
 # JSON release format (schema 1)
 
-This is the public handoff for DEV-160. A tagged release is a directory containing exactly `manifest.json`, `corpus.json` and `SHA256SUMS`. All are UTF-8; JSON is encoded without a BOM. The first populated release is gated on source, rights, coverage and Tamil review. No draft JSON in this repository is a published corpus.
+This is the public dataset release format. A tagged release is a directory containing exactly `manifest.json`, `corpus.json` and `SHA256SUMS`. All are UTF-8; JSON is encoded without a BOM. The first populated release is gated on source, rights, coverage and Tamil review. No draft JSON in this repository is a published corpus.
 
 ## Version and integrity
 
 - Use immutable Git tags of the form `data-vMAJOR.MINOR.PATCH` and set `manifest.release_version` to the same numeric version, without `data-v`. Schema version is the integer `1`. Breaking field/meaning changes increment the schema version and the release major version. Corrections to content use a new release version; never move or replace a published tag or asset.
-- `SHA256SUMS` contains lowercase SHA-256 hex, two spaces, then the filename, one line each for `manifest.json` and `corpus.json`, sorted by filename. It does not include itself. Checksums are computed over exact file bytes. The app pins the tag/commit **and** the expected SHA-256 of `SHA256SUMS` in its own source. This is an integrity pin, not a signature or a statement that a source is trustworthy.
+- `SHA256SUMS` contains lowercase SHA-256 hex, two spaces, then the filename, one line each for `manifest.json` and `corpus.json`, sorted by filename. It does not include itself. Checksums are computed over exact file bytes. Consumers can pin the tag/commit **and** the expected SHA-256 of `SHA256SUMS` independently. This is an integrity pin, not a signature or a statement that a source is trustworthy.
 - A release archive, if offered, preserves these three files at its root. Consumers verify the pinned checksum of `SHA256SUMS`, then both entries, before parsing either JSON file. Git tag and archive URLs are retrieval mechanisms; they are not version resolution at runtime.
 - JSON numbers are integers for identifiers/counts; strings are NFC. No `null` substitutes for missing text. Empty optional collections are `[]`. Files may be prettified; consumers must hash bytes before parsing, not re-serialised JSON.
 
@@ -74,4 +74,4 @@ Translation omissions are explicit in the manifest and have **no** corresponding
 
 ## Release checks
 
-Run `python3 tools/validate_release.py path/to/release --expected-sums-sha256 HEX` before tagging. Validation checks checksums, schema/version, references, unique identities, exactly 3 books/133 chapters/1,330 verses and ten positions per chapter, translation coverage per set, input hashes and approved review gates. The publisher additionally audits raw snapshots, rights, source locators, punctuation/Unicode allowlist, translator segments and generated outputs against pinned rules and reviewer sign-off (DEV-160/174). Passing the structural validator alone never establishes textual or legal accuracy.
+Run `python3 tools/validate_release.py path/to/release --expected-sums-sha256 HEX` before tagging. Validation checks checksums, schema/version, references, unique identities, exactly 3 books/133 chapters/1,330 verses and ten positions per chapter, translation coverage per set, input hashes and approved review gates. The publisher additionally audits raw snapshots, rights, source locators, punctuation/Unicode allowlist, translator segments and generated outputs against pinned rules and reviewer sign-off. Passing the structural validator alone never establishes textual or legal accuracy.
