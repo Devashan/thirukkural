@@ -12,6 +12,7 @@ import re
 import time
 import unicodedata
 from html.parser import HTMLParser
+from urllib.error import HTTPError
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -21,12 +22,25 @@ API = "https://ta.wikisource.org/w/api.php"
 INDEX = "திருக்குறள், மூலம்"
 SOURCE = "srinivasan-1997-wikisource"
 USER_AGENT = "ThirukkuralCorpusResearch/0.1 (public dataset; chapter snapshots)"
+NEXT_REQUEST_AT = 0.0
 
 
 def fetch(**params):
+    global NEXT_REQUEST_AT
     url = API + "?" + urlencode({"format": "json", "formatversion": 2, **params})
-    with urlopen(Request(url, headers={"User-Agent": USER_AGENT}), timeout=30) as response:
-        return json.load(response)
+    for attempt in range(6):
+        time.sleep(max(0, NEXT_REQUEST_AT - time.monotonic()))
+        NEXT_REQUEST_AT = time.monotonic() + 2.0
+        try:
+            with urlopen(Request(url, headers={"User-Agent": USER_AGENT}), timeout=30) as response:
+                return json.load(response)
+        except HTTPError as error:
+            if error.code != 429 or attempt == 5:
+                raise
+            retry_after = error.headers.get("Retry-After", "")
+            wait = int(retry_after) if retry_after.isdigit() else min(120, 10 * 2**attempt)
+            print(f"Wikisource rate limit; waiting {wait}s", flush=True)
+            NEXT_REQUEST_AT = time.monotonic() + max(wait, 2)
 
 
 def page(title):
@@ -125,7 +139,7 @@ def extract_chapter(html):
     return (first - 1) // 10 + 1, groups
 
 
-def collect(destination, limit=133, delay=0.5):
+def collect(destination, limit=133):
     index_rev, source = page(INDEX)
     index_html = rendered(index_rev)
     links = ChapterIndex()
@@ -173,7 +187,6 @@ def collect(destination, limit=133, delay=0.5):
         print(f"{chapter_no:03d} oldid={revision} {title}", flush=True)
         if len(found) >= limit:
             break
-        time.sleep(delay)
     (destination / "chapters.json").write_text(
         json.dumps({"status": "unreviewed-draft", "source_index_revision": str(index_rev),
                     "source_index_checksum": hashlib.sha256(index_html.encode("utf-8")).hexdigest(),
@@ -190,6 +203,5 @@ if __name__ == "__main__":
     argp = argparse.ArgumentParser(description=__doc__)
     argp.add_argument("destination", type=Path)
     argp.add_argument("--limit", type=int, default=133, choices=range(1, 134), metavar="1..133")
-    argp.add_argument("--delay", type=float, default=0.5)
     args = argp.parse_args()
-    collect(args.destination, args.limit, args.delay)
+    collect(args.destination, args.limit)
