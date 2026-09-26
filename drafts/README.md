@@ -13,8 +13,10 @@ all chapter pages, captures each page's current revision, the rendered chapter
 HTML and wrapper wikitext bytes, saves their SHA-256, and extracts ten numbered,
 two-line verses from the saved rendered snapshot. Transcluded scan pages can
 change independently of the wrapper revision; the rendered HTML snapshot hash
-is therefore the text provenance key. If any chapter is missing, duplicated, misnumbered, or
-unexpectedly formatted, it stops instead of guessing. Its `chapters.json` is
+is therefore the text provenance key. It records printed-number differences
+as anomalies pending scan review (for example, this edition prints `71` twice
+in chapter 8); it stops on missing or duplicate chapters and unexpected format.
+Its `chapters.json` is
 an extraction draft, **not** the three-file release in `RELEASE_FORMAT.md`.
 The workflow stores the result as a 30-day artifact for comparison and review;
 it does not publish a corpus or deploy application data.
