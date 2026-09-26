@@ -1,0 +1,21 @@
+{
+  "status": "unreviewed-draft",
+  "source_id": "srinivasan-1997-wikisource",
+  "source_page": "திருக்குறள், மூலம்/கடவுள் வாழ்த்து",
+  "source_revision_id": "1531581",
+  "source_snapshot_sha256": null,
+  "chapter_no": 1,
+  "name_ta": "கடவுள் வாழ்த்து",
+  "kurals": [
+    {"chapter_no": 1, "position": 1, "source_printed_no": "1", "line_1": "அகர முதல எழுத்தெல்லாம் ஆதி", "line_2": "பகவன் முதற்றே உலகு.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 2, "source_printed_no": "2", "line_1": "கற்றதனால் ஆய பயனென்கொல் வாலறிவன்", "line_2": "நற்றாள் தொழாஅர் எனின்.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 3, "source_printed_no": "3", "line_1": "மலர்மிசை ஏகினான் மாணடி சேர்ந்தார்", "line_2": "நிலமிசை நீடுவாழ் வார்.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 4, "source_printed_no": "4", "line_1": "வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு", "line_2": "யாண்டும் இடும்பை இல.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 5, "source_printed_no": "5", "line_1": "இருள்சேர் இருவினையும் சேரா இறைவன்", "line_2": "பொருள்சேர் புகழ்புரிந்தார் மாட்டு.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 6, "source_printed_no": "6", "line_1": "பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க", "line_2": "நெறிநின்றார் நீடுவாழ் வார்.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 7, "source_printed_no": "7", "line_1": "தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால்", "line_2": "மனக்கவலை மாற்றல் அரிது.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 8, "source_printed_no": "8", "line_1": "அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால்", "line_2": "பிறவாழி நீந்தல் அரிது.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 9, "source_printed_no": "9", "line_1": "கோளில் பொறியின் குணமிலவே எண்குணத்தான்", "line_2": "தாளை வணங்காத் தலை.", "source_id": "srinivasan-1997-wikisource"},
+    {"chapter_no": 1, "position": 10, "source_printed_no": "10", "line_1": "பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார்", "line_2": "இறைவன் அடிசேரா தார்.", "source_id": "srinivasan-1997-wikisource"}
+  ]
+}
