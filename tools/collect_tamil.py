@@ -120,8 +120,8 @@ def extract_chapter(html):
     if pending or len(groups) != 10:
         raise ValueError("chapter has leftover text or does not have ten verses")
     first = groups[0][0]
-    if first % 10 != 1 or [x[0] for x in groups] != list(range(first, first + 10)):
-        raise ValueError(f"unexpected printed sequence beginning {first}")
+    if first % 10 != 1:
+        raise ValueError(f"unexpected first printed number {first}")
     return (first - 1) // 10 + 1, groups
 
 
@@ -138,12 +138,19 @@ def collect(destination, limit=133, delay=0.5):
     (snapshots / f"index-oldid-{index_rev}.html").write_bytes(index_html.encode("utf-8"))
     (snapshots / f"index-oldid-{index_rev}.wikitext").write_bytes(source)
     found = {}
+    anomalies = []
     for title in sorted(links.titles):
         revision, raw = page(title)
         html = rendered(revision)
         chapter_no, verses = extract_chapter(html)
         if chapter_no in found:
             raise ValueError(f"duplicate chapter {chapter_no}: {title}")
+        for position, (number, _, _) in enumerate(verses, 1):
+            expected = (chapter_no - 1) * 10 + position
+            if number != expected:
+                anomalies.append({"kural_no": expected, "source_printed_no": str(number),
+                                  "chapter_no": chapter_no, "source_page": title,
+                                  "review_status": "pending", "reason": "printed numbering differs from position; check scan"})
         snapshot_name = f"chapter-{chapter_no:03d}-oldid-{revision}.html"
         (snapshots / snapshot_name).write_bytes(html.encode("utf-8"))
         (snapshots / f"chapter-{chapter_no:03d}-oldid-{revision}.wikitext").write_bytes(raw)
@@ -171,6 +178,7 @@ def collect(destination, limit=133, delay=0.5):
         json.dumps({"status": "unreviewed-draft", "source_index_revision": str(index_rev),
                     "source_index_checksum": hashlib.sha256(index_html.encode("utf-8")).hexdigest(),
                     "source_index_wrapper_wikitext_checksum": hashlib.sha256(source).hexdigest(),
+                    "numbering_anomalies_pending_review": anomalies,
                     "chapters": [found[n] for n in sorted(found)]}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
