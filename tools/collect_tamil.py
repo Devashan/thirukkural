@@ -127,29 +127,35 @@ def extract_chapter(html):
 
 def collect(destination, limit=133, delay=0.5):
     index_rev, source = page(INDEX)
+    index_html = rendered(index_rev)
     links = ChapterIndex()
-    links.feed(rendered(index_rev))
+    links.feed(index_html)
     if len(links.titles) != 133:
         raise ValueError(f"expected 133 distinct chapter links, found {len(links.titles)}")
     destination.mkdir(parents=True, exist_ok=True)
     snapshots = destination / "snapshots"
     snapshots.mkdir(exist_ok=True)
+    (snapshots / f"index-oldid-{index_rev}.html").write_bytes(index_html.encode("utf-8"))
+    (snapshots / f"index-oldid-{index_rev}.wikitext").write_bytes(source)
     found = {}
     for title in sorted(links.titles):
         revision, raw = page(title)
-        chapter_no, verses = extract_chapter(rendered(revision))
+        html = rendered(revision)
+        chapter_no, verses = extract_chapter(html)
         if chapter_no in found:
             raise ValueError(f"duplicate chapter {chapter_no}: {title}")
-        raw_name = f"chapter-{chapter_no:03d}-oldid-{revision}.wikitext"
-        (snapshots / raw_name).write_bytes(raw)
+        snapshot_name = f"chapter-{chapter_no:03d}-oldid-{revision}.html"
+        (snapshots / snapshot_name).write_bytes(html.encode("utf-8"))
+        (snapshots / f"chapter-{chapter_no:03d}-oldid-{revision}.wikitext").write_bytes(raw)
         found[chapter_no] = {
             "chapter_no": chapter_no,
             "name_ta": title.removeprefix(INDEX + "/"),
             "source_id": SOURCE,
             "source_page": title,
             "source_revision_id": str(revision),
-            "source_checksum": hashlib.sha256(raw).hexdigest(),
-            "snapshot": "snapshots/" + raw_name,
+            "source_checksum": hashlib.sha256(html.encode("utf-8")).hexdigest(),
+            "snapshot": "snapshots/" + snapshot_name,
+            "wrapper_wikitext_checksum": hashlib.sha256(raw).hexdigest(),
             "kurals": [
                 {"chapter_no": chapter_no, "position": position,
                  "source_printed_no": str(number), "line_1": a, "line_2": b,
@@ -163,7 +169,8 @@ def collect(destination, limit=133, delay=0.5):
         time.sleep(delay)
     (destination / "chapters.json").write_text(
         json.dumps({"status": "unreviewed-draft", "source_index_revision": str(index_rev),
-                    "source_index_checksum": hashlib.sha256(source).hexdigest(),
+                    "source_index_checksum": hashlib.sha256(index_html.encode("utf-8")).hexdigest(),
+                    "source_index_wrapper_wikitext_checksum": hashlib.sha256(source).hexdigest(),
                     "chapters": [found[n] for n in sorted(found)]}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
