@@ -30,7 +30,7 @@ def fetch(**params):
     url = API + "?" + urlencode({"format": "json", "formatversion": 2, **params})
     for attempt in range(6):
         time.sleep(max(0, NEXT_REQUEST_AT - time.monotonic()))
-        NEXT_REQUEST_AT = time.monotonic() + 2.0
+        NEXT_REQUEST_AT = time.monotonic() + 6.5
         try:
             with urlopen(Request(url, headers={"User-Agent": USER_AGENT}), timeout=30) as response:
                 return json.load(response)
@@ -110,18 +110,18 @@ class ChapterText(HTMLParser):
 def extract_chapter(html):
     parser = ChapterText()
     parser.feed(html)
-    # Each rendered chapter has one paragraph of verse lines followed by
-    # printed verse numbers. Do not normalize spacing inside Tamil lines.
+    # Verse paragraphs may be split at scan/page boundaries. Preserve order
+    # and require exactly ten numbered two-line groups across those paragraphs.
     candidates = []
     for para in parser.paras:
         lines = [x.strip().replace("\u2060", "") for x in para.splitlines()]
         lines = [unicodedata.normalize("NFC", x.strip()) for x in lines if x.strip()]
         numbers = [x for x in lines if re.fullmatch(r"[0-9]{1,4}", x)]
-        if len(numbers) == 10:
-            candidates.append(lines)
-    if len(candidates) != 1:
-        raise ValueError(f"expected one verse paragraph, found {len(candidates)}")
-    lines = candidates[0]
+        if numbers:
+            candidates.extend(lines)
+    lines = candidates
+    if sum(bool(re.fullmatch(r"[0-9]{1,4}", x)) for x in lines) != 10:
+        raise ValueError("expected ten verse numbers across chapter paragraphs")
     groups, pending = [], []
     for line in lines:
         if re.fullmatch(r"[0-9]{1,4}", line):
@@ -140,8 +140,16 @@ def extract_chapter(html):
 
 
 def collect(destination, limit=133):
-    index_rev, source = page(INDEX)
-    index_html = rendered(index_rev)
+    cached_index = list((destination / "snapshots").glob("index-oldid-*.html"))
+    if len(cached_index) > 1:
+        raise ValueError("multiple cached index revisions")
+    if cached_index:
+        index_rev = int(re.search(r"oldid-(\d+)", cached_index[0].name)[1])
+        index_html = cached_index[0].read_text(encoding="utf-8")
+        source = cached_index[0].with_suffix(".wikitext").read_bytes()
+    else:
+        index_rev, source = page(INDEX)
+        index_html = rendered(index_rev)
     links = ChapterIndex()
     links.feed(index_html)
     if len(links.titles) != 133:
@@ -151,12 +159,33 @@ def collect(destination, limit=133):
     snapshots.mkdir(exist_ok=True)
     (snapshots / f"index-oldid-{index_rev}.html").write_bytes(index_html.encode("utf-8"))
     (snapshots / f"index-oldid-{index_rev}.wikitext").write_bytes(source)
+    cache = {}
+    for wrapper in list(snapshots.glob("chapter-*-oldid-*.wikitext")) + list(snapshots.glob("pending-oldid-*.wikitext")):
+        match = re.search(r"\|\s*section\s*=\s*(.+)", wrapper.read_text(encoding="utf-8"))
+        if match and wrapper.with_suffix(".html").exists():
+            title = INDEX + "/" + match[1].strip()
+            if title not in links.titles or title in cache:
+                raise ValueError(f"unknown or duplicate cached chapter: {title}")
+            cache[title] = wrapper
     found = {}
     anomalies = []
     for title in sorted(links.titles):
-        revision, raw = page(title)
-        html = rendered(revision)
-        chapter_no, verses = extract_chapter(html)
+        if title in cache:
+            wrapper = cache[title]
+            revision = int(re.search(r"oldid-(\d+)", wrapper.name)[1])
+            raw = wrapper.read_bytes()
+            html = wrapper.with_suffix(".html").read_text(encoding="utf-8")
+        else:
+            revision, raw = page(title)
+            html = rendered(revision)
+            # Retain failed pages too, so parser repairs do not need a refetch.
+            pending = snapshots / f"pending-oldid-{revision}"
+            pending.with_suffix(".html").write_bytes(html.encode("utf-8"))
+            pending.with_suffix(".wikitext").write_bytes(raw)
+        try:
+            chapter_no, verses = extract_chapter(html)
+        except ValueError as error:
+            raise ValueError(f"{title} oldid={revision}: {error}") from error
         if chapter_no in found:
             raise ValueError(f"duplicate chapter {chapter_no}: {title}")
         for position, (number, _, _) in enumerate(verses, 1):
