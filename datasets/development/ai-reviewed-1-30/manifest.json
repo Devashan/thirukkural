@@ -1,0 +1,104 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.02.1",
+  "created_at": "2026-10-02T16:34:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      1,
+      30
+    ],
+    "kurals": [
+      1,
+      300
+    ]
+  },
+  "counts": {
+    "chapters": 30,
+    "kurals": 300,
+    "status_no_issue_found": 213,
+    "status_flagged": 87,
+    "needs_tamil_reviewer": 300,
+    "needs_scan_review": 9
+  },
+  "coverage": {
+    "canonical_tamil": 300,
+    "ai_idiomatic_translation_drafts": 300,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0
+  },
+  "review_summary": {
+    "finding_categories": {
+      "extraction_or_alignment": 200,
+      "translation_difference": 308,
+      "interpretive_uncertainty": 54,
+      "archaic_or_unclear_wording": 173,
+      "missing_source_context": 17,
+      "possible_meaning_error": 11
+    },
+    "finding_severities": {
+      "informational": 670,
+      "needs_review": 93
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in corpus.json in this development snapshot."
+    }
+  ],
+  "limitations": [
+    "All 300 records still require qualified Tamil-language review.",
+    "This is not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "Chapters 9 and 18 were verified against their pinned Wikisource oldids but their source HTML snapshots were not present in the recovered workflow artifact.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact app-development corpus; the idiomatic layer is an AI-assisted project draft."
+  ],
+  "chapter_files": {
+    "chapters/chapter-001.json": "10c9db016e91f9953f949bc7702d7e2a9f01391ba16ebb7fad34c0819ff9c2e5",
+    "chapters/chapter-002.json": "7870da47a224429f081774210fc3ee7b2db15f6024c0b9aba74e74ee19479bcb",
+    "chapters/chapter-003.json": "72f5933af4a643ec19545581133c16598e2ec55589d4c792629fdbcccb8e6ad0",
+    "chapters/chapter-004.json": "3620fad20a5d6921317fa057e4a1b14278971fd463bf669d6ed79d9eac279f85",
+    "chapters/chapter-005.json": "017bc4fca3de6edd064e540cdcb72e4a73a1d5199ec87ebe557c0fad7c6e6c54",
+    "chapters/chapter-006.json": "d732371799c57b53d54e5431c2963b91990869bd6243d2453886d65e7f7ffcbb",
+    "chapters/chapter-007.json": "47ecf796ffdb71e85f5271433ba8cea38702b306bd25cde8fb7ae2608c1553b7",
+    "chapters/chapter-008.json": "689e67d5eabce8409d887c0163e6b0656479caa040bc93cf0079bff38e3f5d66",
+    "chapters/chapter-009.json": "23d57bc296cdbe679058ad2acc36efb052c938cff7c3f0cb7fd9605397172b68",
+    "chapters/chapter-010.json": "041c5cd19f9351991e0f2dd4d3aff5dec7fa7e9b75b87a2b7f5da06116806871",
+    "chapters/chapter-011.json": "c8008eacbc9e0ed442215046d725df51839bca3078a48df8b88be9de95eff687",
+    "chapters/chapter-012.json": "442893789a7af37e9080e07fa0ebbc6826f3460c852dd88e2f56bc9ad0b10a1e",
+    "chapters/chapter-013.json": "05be5e6c9faca578cd9c3c701e833ac8f1452d7a06ecd1962b1cad6240f888fd",
+    "chapters/chapter-014.json": "f674aba44dbf7d776a2f87bcbb60bcccac63bd5f5c2b12d0becadbb214b80188",
+    "chapters/chapter-015.json": "f2f912d78843fbd562646089a2c52ada4ed14de69a52932c431c6e713db40ac8",
+    "chapters/chapter-016.json": "361825f1fe87572da9239677357817ab17c9b50d806adfbffb91bf60b6b207be",
+    "chapters/chapter-017.json": "98c3d3b9a7e4eb41411d269af5eaed3524661140d8769675acfde946733e4355",
+    "chapters/chapter-018.json": "fbb67f2e0a0693b38da0c7ea7d71272af4019527d80ebc2ab4c1bd9dedfc1abb",
+    "chapters/chapter-019.json": "722fd8b4715cf52a07439f60091c7ae04f4feef8e5de0938cc84c869ca24d9e0",
+    "chapters/chapter-020.json": "8f7e02a7ce4cc7616942244027150cd042062a245e6701916d3c3fadf927d44d",
+    "chapters/chapter-021.json": "28336372e5d4dd79e63887c15e0daf516539c32b5e4ebb47fedf249a6527aaba",
+    "chapters/chapter-022.json": "f398e75a3e4d5375f3e4071a1f6c29f0853706444ed693b43ad1314b43e1e771",
+    "chapters/chapter-023.json": "31b5431d1de9d2831f62c89468fd590a4053c274ba52fdd54facd250814d0350",
+    "chapters/chapter-024.json": "977a5ece72de14e4052512833877b2fdaddcd3eb6ff7ac60f19fbe696a7c31ad",
+    "chapters/chapter-025.json": "329214bdb48a3e116bf4605fa7b438716e4c82746c6c5174bf7202c1805f9e8f",
+    "chapters/chapter-026.json": "12359689273544c5c59234da4ca51a96d28468a3f1e5c8ffd02b9d463573267b",
+    "chapters/chapter-027.json": "22e75dfe7902eaab0327ca1cf9ff68a5ab9c2dccd9bad1f8dce5a3c8bbc39450",
+    "chapters/chapter-028.json": "acdf7534a360ce00aadef23dea275cce3be0eeb7829f81d1f037f63ff7a2a86a",
+    "chapters/chapter-029.json": "62617714b876d6d9747e783d62bf1dff96c877e50828319118e78fc5a5770eab",
+    "chapters/chapter-030.json": "7e2a16c99bf23a8a7d7521560b3711558d8f048f3923758c744e225f555f8998"
+  }
+}

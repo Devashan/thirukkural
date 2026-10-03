@@ -31,3 +31,8 @@ Please use an issue or pull request and follow [CONTRIBUTING.md](CONTRIBUTING.md
 ## Ownership
 
 This data project is maintained by Devashan Naicker and intended for broad reuse and community review. Rights vary by content layer; read [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md) before reusing a future release.
+
+
+## Development datasets
+
+Application development may use explicitly labelled partial snapshots under `datasets/development/` while the complete corpus is still being reviewed. These snapshots are not formal `data-v*` releases and must expose their coverage, provenance and review limitations. The first snapshot, `ai-reviewed-1-30`, covers Chapters 1–30 / Kurals 1–300 and remains pending qualified Tamil-language review.
