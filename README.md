@@ -35,4 +35,11 @@ This data project is maintained by Devashan Naicker and intended for broad reuse
 
 ## Development datasets
 
-Application development may use explicitly labelled partial snapshots under `datasets/development/` while the complete corpus is still being reviewed. These snapshots are not formal `data-v*` releases and must expose their coverage, provenance and review limitations. The first snapshot, `ai-reviewed-1-30`, covers Chapters 1–30 / Kurals 1–300 and remains pending qualified Tamil-language review.
+Application development may use explicitly labelled partial snapshots under `datasets/development/` while the complete corpus is still being reviewed. These snapshots are not formal `data-v*` releases and must expose their coverage, provenance and review limitations.
+
+Current immutable development batches:
+
+- `ai-reviewed-1-30`: Chapters 1–30 / Kurals 1–300.
+- `ai-reviewed-31-40`: Chapters 31–40 / Kurals 301–400.
+
+Together they provide development coverage for Chapters 1–40 / Kurals 1–400. All records remain pending qualified Tamil-language review.
