@@ -41,5 +41,8 @@ Current immutable development batches:
 
 - `ai-reviewed-1-30`: Chapters 1–30 / Kurals 1–300.
 - `ai-reviewed-31-40`: Chapters 31–40 / Kurals 301–400.
+- `ai-reviewed-41-50`: Chapters 41–50 / Kurals 401–500.
+- `ai-reviewed-51-60`: Chapters 51–60 / Kurals 501–600.
+- `ai-reviewed-61-70`: Chapters 61–70 / Kurals 601–700.
 
-Together they provide development coverage for Chapters 1–40 / Kurals 1–400. All records remain pending qualified Tamil-language review.
+Together they provide development coverage for Chapters 1–70 / Kurals 1–700. All records remain pending qualified Tamil-language review.
