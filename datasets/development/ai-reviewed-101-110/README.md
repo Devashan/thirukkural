@@ -1,0 +1,3 @@
+# AI-reviewed development batch: Kurals 1001–1100
+
+Development batch for Chapters 101–110 / Kurals 1001–1100. It is not a formal `data-v*` release. Canonical Tamil is pinned to the selected R. Srinivasan (1997) Tamil Wikisource chapter revisions; AI-assisted idiomatic English and review findings remain pending qualified Tamil-language review. All pinned Tamil source HTML snapshots for this batch are preserved in the recovered workflow artifact. See `manifest.json` for coverage, provenance, review counts and chapter SHA-256 values.
