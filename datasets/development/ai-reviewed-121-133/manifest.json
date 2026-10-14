@@ -1,0 +1,88 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.14.4",
+  "created_at": "2026-10-14T15:00:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      121,
+      133
+    ],
+    "kurals": [
+      1201,
+      1330
+    ]
+  },
+  "counts": {
+    "chapters": 13,
+    "kurals": 130,
+    "status_no_issue_found": 115,
+    "status_flagged": 15,
+    "needs_tamil_reviewer": 130,
+    "needs_scan_review": 6
+  },
+  "coverage": {
+    "canonical_tamil": 130,
+    "ai_idiomatic_translation_drafts": 127,
+    "idiomatic_candidates_withheld": 3,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0
+  },
+  "review_summary": {
+    "finding_categories": {
+      "archaic_or_unclear_wording": 73,
+      "extraction_or_alignment": 61,
+      "interpretive_uncertainty": 17,
+      "missing_source_context": 14,
+      "translation_difference": 118
+    },
+    "finding_severities": {
+      "informational": 268,
+      "needs_review": 15
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+    }
+  ],
+  "limitations": [
+    "All 130 records still require qualified Tamil-language review.",
+    "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "All pinned Tamil Wikisource HTML snapshots for this batch were present in the recovered workflow artifact and are SHA-256 pinned at chapter level.",
+    "Idiomatic candidate text is intentionally withheld for Kural(s) 1231, 1262, 1306 because the supplied AI review left material interpretive choices unresolved.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft."
+  ],
+  "chapter_files": {
+    "chapters/chapter-121.json": "a1b71f8a30da141840c6271aefc470eba328914a2abfc7a6b67e89e37c726670",
+    "chapters/chapter-122.json": "df448bcdf725b4184a834d04ac89feaeca85376618bae81223e2dfb483ae4959",
+    "chapters/chapter-123.json": "a101af42143caa4464f45d78409332bbf0de14dfa814aac5f2923d556c60077c",
+    "chapters/chapter-124.json": "a90d80924f31610e750e124d83770507d41044289673ccc797821437a4aa6a7d",
+    "chapters/chapter-125.json": "50ef6b5c65a05dbb8fda38f86d02974fae3302f927d386335b1e87b59be552e8",
+    "chapters/chapter-126.json": "b39b28fca01d321c9df1a0d777c59cb52d72d796f893856d81e1ffb23d1751be",
+    "chapters/chapter-127.json": "76f0c5174ee6b494ce9f0a089575ec901c79327b65606169a9d013cb3d285e4f",
+    "chapters/chapter-128.json": "b9b57c7131985541b8a5da755e37d953c84561c0f024769dd74487e262d7b522",
+    "chapters/chapter-129.json": "8e2733846c834ab719c2c98cf272252bebcd4838d4cf65d28696ee18a1287302",
+    "chapters/chapter-130.json": "32f243568031b78d0123616a4f18b5406d86421ef28cc886a7fd37c40383033e",
+    "chapters/chapter-131.json": "e74b028408136845ffff051fdcd7e50b1ba5bba6218077589cb0d9d5f4755114",
+    "chapters/chapter-132.json": "86ea88be3c4fe24ce0b8274cb16ddafc47c572f4b0ca7f14f20fb85ddf2d2d99",
+    "chapters/chapter-133.json": "2d66622370591c6dde4d27ecdcfddcdcc6a07a2f51b44d3225e862007874e0d4"
+  }
+}
