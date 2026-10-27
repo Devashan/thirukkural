@@ -1,0 +1,90 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.27.1",
+  "created_at": "2026-10-27T12:00:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      121,
+      133
+    ],
+    "kurals": [
+      1201,
+      1330
+    ]
+  },
+  "counts": {
+    "chapters": 13,
+    "kurals": 130,
+    "status_no_issue_found": 115,
+    "status_flagged": 15,
+    "needs_tamil_reviewer": 130,
+    "needs_scan_review": 6
+  },
+  "coverage": {
+    "canonical_tamil": 130,
+    "ai_idiomatic_translation_drafts": 130,
+    "idiomatic_candidates_withheld": 0,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0
+  },
+  "review_summary": {
+    "finding_categories": {
+      "archaic_or_unclear_wording": 73,
+      "extraction_or_alignment": 61,
+      "interpretive_uncertainty": 17,
+      "missing_source_context": 14,
+      "translation_difference": 118
+    },
+    "finding_severities": {
+      "informational": 268,
+      "needs_review": 15
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+    }
+  ],
+  "limitations": [
+    "All 130 records still require qualified Tamil-language review.",
+    "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "All pinned Tamil Wikisource HTML snapshots for this batch were present in the recovered workflow artifact and are SHA-256 pinned at chapter level.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft.",
+    "Previously withheld meanings have commentary-backed AI-assisted editorial drafts. All review flags and human-review requirements remain; see the resolution notes for the chosen readings and alternatives."
+  ],
+  "chapter_files": {
+    "chapters/chapter-121.json": "e83a0ee76812ef78e7d6e787635552f1275df002f78f3fbacb36ff3f40df99de",
+    "chapters/chapter-122.json": "36db3d016ef2010f59abbb4202310ddf76c8ec20a7a377af7683b999f212e3ee",
+    "chapters/chapter-123.json": "671916996b43a41d3a79bb4516252d8dc28260d82a17b352c1f9e5f4218f6c04",
+    "chapters/chapter-124.json": "33cda35b0ffc09a174938aa12bfe2ed2d697ccf4c33205099d37b3e30cd62e63",
+    "chapters/chapter-125.json": "4ffdeabcd51a0861399c080299b1b6e910d257acf4fffea8fe62b8d02218ce4b",
+    "chapters/chapter-126.json": "c813830751223da93480e2dfe4fcb7286a1c74f7cd9c99f138ad4456d6b95bf3",
+    "chapters/chapter-127.json": "ce02dcc3ba75a895af85b81bf4395d27b8e10fb7deb13136f9f102984e7704ce",
+    "chapters/chapter-128.json": "24e1ee29e11e9fd8a79f10116b501c786e54cfa771db7e6015a3d238c2e073cb",
+    "chapters/chapter-129.json": "7a1f2af3da90e9cfaff5cc4d281cb29b49f7b21bab3a90d961182318f367050c",
+    "chapters/chapter-130.json": "30143aab95815723304f25fe95e430784bef5a2c3f188977ccf125f38cc48f27",
+    "chapters/chapter-131.json": "39e2b49b6d3118e9c4a4913a84fc1da67ec6a1dd39831f7bef1ec33bf9f7904f",
+    "chapters/chapter-132.json": "011d144ac41a560fe51401254e9dc1bab04db958b6cca1bfdc04c96088ee198f",
+    "chapters/chapter-133.json": "05e4e21ebe2fe9ead8c62b47eafcc06e870fd2a6c22f7089e2fa26080f17fdbf"
+  },
+  "supersedes_dataset_path": "datasets/development/ai-reviewed-121-133",
+  "editorial_resolution": "../../../docs/meaning-resolutions-2026-10-27.md"
+}

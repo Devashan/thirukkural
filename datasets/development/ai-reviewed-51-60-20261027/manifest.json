@@ -1,0 +1,87 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.27.1",
+  "created_at": "2026-10-27T12:00:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      51,
+      60
+    ],
+    "kurals": [
+      501,
+      600
+    ]
+  },
+  "counts": {
+    "chapters": 10,
+    "kurals": 100,
+    "status_no_issue_found": 77,
+    "status_flagged": 23,
+    "needs_tamil_reviewer": 100,
+    "needs_scan_review": 4
+  },
+  "coverage": {
+    "canonical_tamil": 100,
+    "ai_idiomatic_translation_drafts": 100,
+    "idiomatic_candidates_withheld": 0,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0
+  },
+  "review_summary": {
+    "finding_categories": {
+      "archaic_or_unclear_wording": 55,
+      "extraction_or_alignment": 48,
+      "interpretive_uncertainty": 16,
+      "missing_source_context": 1,
+      "translation_difference": 101
+    },
+    "finding_severities": {
+      "informational": 197,
+      "needs_review": 24
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+    }
+  ],
+  "limitations": [
+    "All 100 records still require qualified Tamil-language review.",
+    "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "Source HTML snapshots were not present in the recovered workflow artifact for chapter(s) 57; their pinned Wikisource oldids are retained, source_snapshot_sha256 is null, and the Tamil lines were reconstructed from the current Tamil Wikisource chapter text pending oldid-snapshot verification.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft.",
+    "Previously withheld meanings have commentary-backed AI-assisted editorial drafts. All review flags and human-review requirements remain; see the resolution notes for the chosen readings and alternatives."
+  ],
+  "chapter_files": {
+    "chapters/chapter-051.json": "cf4e5e5f21c78bf931bb820e43714415b638412638cb78b416b99f1687c8124e",
+    "chapters/chapter-052.json": "005fe32f8dbcd520293a5a6611fc2d4d1769229f895b2727f37a32190420354a",
+    "chapters/chapter-053.json": "1e04a3e6def7fb096b26f92f21f61f7874a17b55cec1dc1c8871afffa10654e9",
+    "chapters/chapter-054.json": "e7fb39f36843fced6a3cc9c71379cb02c12b58f7d410f4d4d333bad39e826f3d",
+    "chapters/chapter-055.json": "d6d319ab47f0135c2d719df021495726c1f5c5dd521406240acf45ac5b761218",
+    "chapters/chapter-056.json": "1b861415e59077749422a18daad999a30b705d8cfcf623562a8319f797e3530f",
+    "chapters/chapter-057.json": "1e9dc6a0c729e7205c4350506fbcd2688917a0205554be6b6cf2ce5fa40263c7",
+    "chapters/chapter-058.json": "0496beb8e2b2ec6dfc62d8608820a0be907dc560c3d973af3da1c7aa686f977b",
+    "chapters/chapter-059.json": "e6ed01f98994979a319b9deeedb4361943cdaa45c1b4015d5e08f5670ae0ffb5",
+    "chapters/chapter-060.json": "f2dc01e619fcde53c1c1005a03a157102b21652f38836751ed9225b3b11c088a"
+  },
+  "supersedes_dataset_path": "datasets/development/ai-reviewed-51-60",
+  "editorial_resolution": "../../../docs/meaning-resolutions-2026-10-27.md"
+}
