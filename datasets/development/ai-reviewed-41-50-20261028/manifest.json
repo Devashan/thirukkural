@@ -1,0 +1,90 @@
+{
+    "dataset_format": "thirukkural-development-v1",
+    "dataset_version": "2026.10.28.1",
+    "created_at": "2026-10-08T21:30:00Z",
+    "status": "ai_reviewed_development",
+    "scope": {
+        "chapters": [
+            41,
+            50
+        ],
+        "kurals": [
+            401,
+            500
+        ]
+    },
+    "counts": {
+        "chapters": 10,
+        "kurals": 100,
+        "status_no_issue_found": 81,
+        "status_flagged": 19,
+        "needs_tamil_reviewer": 100,
+        "needs_scan_review": 5
+    },
+    "coverage": {
+        "canonical_tamil": 100,
+        "ai_idiomatic_translation_drafts": 100,
+        "idiomatic_candidates_withheld": 0,
+        "historical_english_in_this_snapshot": 0,
+        "transliteration_in_this_snapshot": 0,
+        "human_tamil_reviewed": 0
+    },
+    "review_summary": {
+        "finding_categories": {
+            "archaic_or_unclear_wording": 38,
+            "extraction_or_alignment": 74,
+            "interpretive_uncertainty": 10,
+            "missing_source_context": 7,
+            "translation_difference": 100
+        },
+        "finding_severities": {
+            "informational": 209,
+            "needs_review": 20
+        }
+    },
+    "sources": [
+        {
+            "source_id": "srinivasan-1997-wikisource",
+            "role": "canonical_tamil",
+            "work": "திருக்குறள், மூலம்",
+            "editor": "R. Srinivasan",
+            "year": "1997",
+            "host": "Tamil Wikisource",
+            "review_state": "source-pinned; human Tamil review pending"
+        },
+        {
+            "source_id": "aiyar-1916-standardebooks",
+            "role": "historical_english_review_basis",
+            "translator": "V. V. S. Aiyar",
+            "year": "1916",
+            "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+            "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+            "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+        }
+    ],
+    "limitations": [
+        "All 100 records still require qualified Tamil-language review.",
+        "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+        "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+        "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft."
+    ],
+    "chapter_files": {
+        "chapters/chapter-041.json": "97cf27556500a30e9dba0b494607fb98a35375d423deaacb272339ad8f179751",
+        "chapters/chapter-042.json": "b1fc815e2c22b59514e207ad7429eb28b2c1f95312dfd9b50a651dbebb7429fa",
+        "chapters/chapter-043.json": "51f3b52dfeb8fffa0505a597f88bec76539ea671977d88210d1f2a7db816646d",
+        "chapters/chapter-044.json": "c647337664eecd74a97dfcd53225c92d8e493685f8aa1545445b72f9e764bf3d",
+        "chapters/chapter-045.json": "7b8c89447feabf29913fc6b9812f4e2a39efb36db3c327dc17d73f982d5f82e1",
+        "chapters/chapter-046.json": "ea1cce22f81718202845219557a997af7bf60ffc6214b134e909f8ab3f516df6",
+        "chapters/chapter-047.json": "2c740214cc1f24cf4b70db10f5a8f3fcea6dad4bba2a85fc1bb9697837b635b6",
+        "chapters/chapter-048.json": "6ecf98fa3e5bdae318f0df172b09c2002538a098fd30f11be4a3aeca33121a16",
+        "chapters/chapter-049.json": "d80939c079bef08f4829be43fbbd22dc3e8083d786a2fca3ffe6c8d14a6eb500",
+        "chapters/chapter-050.json": "7c5f3281e3fc66f7d33df14bb245f3dcece459c6d363dea319f80a0fbd8594d5"
+    },
+    "structure": {
+        "english_chapter_titles": 10,
+        "iyal_count_in_full_corpus": 10,
+        "source_id": "dikshitar-1949-project-madurai",
+        "source_locator": "https://www.projectmadurai.org/pm_etexts/utf8/pmuni0665.html",
+        "source_credit": "V. R. Ramachandra Dikshitar, Thirukkural English Translation (1949), Project Madurai electronic text"
+    }
+}
