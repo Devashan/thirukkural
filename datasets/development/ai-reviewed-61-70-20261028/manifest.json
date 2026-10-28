@@ -1,0 +1,95 @@
+{
+    "dataset_format": "thirukkural-development-v1",
+    "dataset_version": "2026.10.28.1",
+    "created_at": "2026-10-27T12:00:00Z",
+    "status": "ai_reviewed_development",
+    "scope": {
+        "chapters": [
+            61,
+            70
+        ],
+        "kurals": [
+            601,
+            700
+        ]
+    },
+    "counts": {
+        "chapters": 10,
+        "kurals": 100,
+        "status_no_issue_found": 80,
+        "status_flagged": 20,
+        "needs_tamil_reviewer": 100,
+        "needs_scan_review": 3
+    },
+    "coverage": {
+        "canonical_tamil": 100,
+        "ai_idiomatic_translation_drafts": 100,
+        "idiomatic_candidates_withheld": 0,
+        "historical_english_in_this_snapshot": 0,
+        "transliteration_in_this_snapshot": 0,
+        "human_tamil_reviewed": 0
+    },
+    "review_summary": {
+        "finding_categories": {
+            "archaic_or_unclear_wording": 46,
+            "extraction_or_alignment": 51,
+            "interpretive_uncertainty": 18,
+            "missing_source_context": 2,
+            "possible_meaning_error": 2,
+            "translation_difference": 104
+        },
+        "finding_severities": {
+            "informational": 203,
+            "needs_review": 20
+        }
+    },
+    "sources": [
+        {
+            "source_id": "srinivasan-1997-wikisource",
+            "role": "canonical_tamil",
+            "work": "திருக்குறள், மூலம்",
+            "editor": "R. Srinivasan",
+            "year": "1997",
+            "host": "Tamil Wikisource",
+            "review_state": "source-pinned; human Tamil review pending"
+        },
+        {
+            "source_id": "aiyar-1916-standardebooks",
+            "role": "historical_english_review_basis",
+            "translator": "V. V. S. Aiyar",
+            "year": "1916",
+            "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+            "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+            "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+        }
+    ],
+    "limitations": [
+        "All 100 records still require qualified Tamil-language review.",
+        "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+        "Source HTML snapshots were not present in the recovered workflow artifact for chapter(s) 66, 67; their pinned Wikisource oldids are retained, source_snapshot_sha256 is null, and the Tamil lines were reconstructed from the current Tamil Wikisource chapter text pending oldid-snapshot verification.",
+        "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+        "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft.",
+        "Previously withheld meanings have commentary-backed AI-assisted editorial drafts. All review flags and human-review requirements remain; see the resolution notes for the chosen readings and alternatives."
+    ],
+    "chapter_files": {
+        "chapters/chapter-061.json": "74e5ce0b3ab8c33b76d0b0e2afb3fab559c78e930a80c95c0884d088f1ef44fb",
+        "chapters/chapter-062.json": "7d40675094fb1df406df2da22a7d8c5052465183af6255298264f6b6dc336079",
+        "chapters/chapter-063.json": "ad86d2814e528e716b5b1090cc756c61fcc55b0c37d6041ac14243df02f53ea4",
+        "chapters/chapter-064.json": "700aaa0031c2849f19af40aee7aca2fc2732a5e1fb7428b55549cc9d5d4651e9",
+        "chapters/chapter-065.json": "8a29db53c799aa7ffa1db1a8f857c78055ef9ce5c9b27e844eec3e463662c23b",
+        "chapters/chapter-066.json": "4db0e29d9cfc643cc69a86d996e8ee7dd1f396da068eb42264d8594387cb424c",
+        "chapters/chapter-067.json": "29dd8e904f182577ad7444e7053ee643f260eb4d91acebde73deb83c55f4ec4e",
+        "chapters/chapter-068.json": "ad2445c52c0c97712c88bf241fa020c57c57e345db78a07a42f42a25ea901af0",
+        "chapters/chapter-069.json": "bea07555d46119a5356e33ca800fa152e8e2fea7227bd8e1e14f62416c6c27ca",
+        "chapters/chapter-070.json": "ba10ef8f026a7d4e42fc73e456e445eaee8b70ca0a532c5065bfb4fa34a9f802"
+    },
+    "supersedes_dataset_path": "datasets/development/ai-reviewed-61-70",
+    "editorial_resolution": "../../../docs/meaning-resolutions-2026-10-27.md",
+    "structure": {
+        "english_chapter_titles": 10,
+        "iyal_count_in_full_corpus": 10,
+        "source_id": "dikshitar-1949-project-madurai",
+        "source_locator": "https://www.projectmadurai.org/pm_etexts/utf8/pmuni0665.html",
+        "source_credit": "V. R. Ramachandra Dikshitar, Thirukkural English Translation (1949), Project Madurai electronic text"
+    }
+}
