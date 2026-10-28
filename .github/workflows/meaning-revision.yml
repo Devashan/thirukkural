@@ -14,3 +14,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python tools/validate_meaning_revision.py
+      - run: python tools/validate_corpus_completion.py

@@ -56,3 +56,7 @@ Together they provide development coverage for all 133 chapters / all 1,330 Kura
 ## Meaning revision — 27 October 2026
 
 New `-20261027` replacements for the 51–60 through 121–133 batches supply all 15 formerly withheld idiomatic explanations. New consumers use those replacements together with the unchanged first three batches. This gives 1,323 English drafts and seven withheld meanings; every record still awaits qualified Tamil-language review. See [the decisions and sources](docs/meaning-resolutions-2026-10-27.md). Earlier snapshots remain unchanged.
+
+## Corpus completion — 28 October 2026
+
+Consumers now select all eleven `-20261028` batches for `2026.10.28.1`: **1,330 English meanings, no withheld entries, 133 English chapter titles and sourced iyal assignments**. Earlier snapshots remain unchanged. All English meanings and labels remain AI-assisted drafts pending qualified Tamil review. See [decisions, sources and division scheme](docs/corpus-completion-2026-10-28.md). Validate with `python tools/validate_corpus_completion.py`.

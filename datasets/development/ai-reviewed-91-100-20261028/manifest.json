@@ -1,0 +1,97 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.28.1",
+  "created_at": "2026-10-28T18:00:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      91,
+      100
+    ],
+    "kurals": [
+      901,
+      1000
+    ]
+  },
+  "counts": {
+    "chapters": 10,
+    "kurals": 100,
+    "status_no_issue_found": 81,
+    "status_flagged": 19,
+    "needs_tamil_reviewer": 100,
+    "needs_scan_review": 1
+  },
+  "coverage": {
+    "canonical_tamil": 100,
+    "ai_idiomatic_translation_drafts": 100,
+    "idiomatic_candidates_withheld": 0,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0,
+    "english_chapter_title_drafts": 10,
+    "sourced_iyal_assignments": 10
+  },
+  "review_summary": {
+    "finding_categories": {
+      "archaic_or_unclear_wording": 35,
+      "extraction_or_alignment": 56,
+      "interpretive_uncertainty": 17,
+      "missing_source_context": 3,
+      "possible_meaning_error": 1,
+      "translation_difference": 101
+    },
+    "finding_severities": {
+      "informational": 194,
+      "needs_review": 19
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+    },
+    {
+      "source_id": "tamilvu-parimelalagar-divisions",
+      "role": "iyal_division_scheme",
+      "locator": "https://www.tamilvu.org/library/l2100/html/l2100lft.htm",
+      "retrieved_at": "2026-10-28",
+      "note": "Transcribed table of contents, not independently scan-verified. Tamil spelling normalised in labels only; canonical chapter and verse text unchanged."
+    }
+  ],
+  "limitations": [
+    "All 100 records still require qualified Tamil-language review.",
+    "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "All pinned Tamil Wikisource HTML snapshots for this batch were present in the recovered workflow artifact and are SHA-256 pinned at chapter level.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft.",
+    "English meanings and chapter labels are AI-assisted drafts pending qualified Tamil review. Iyal assignments use the explicitly named Tamil Virtual Academy scheme, not a universal division claim."
+  ],
+  "chapter_files": {
+    "chapters/chapter-091.json": "8c01ab03f150502883c05bfbeccc277f4b8e27adfedaf5506f968445ca32a2f2",
+    "chapters/chapter-092.json": "e4dd5ea845bf9f6cc224070c379714a7391dc0abe2906cd851c9679953161689",
+    "chapters/chapter-093.json": "6aef44d4033d4b8e23f61a19c70fab87a1fb76d5c9367ccaed0e7a475f89f819",
+    "chapters/chapter-094.json": "623d5d458851cfd6897d0af5a6f0dc32fa2838387cb008db2a9f3335cfc99360",
+    "chapters/chapter-095.json": "d0393b08e15a71018e7d9c807b23ff515278807dadf84f9481596593c64b640c",
+    "chapters/chapter-096.json": "52207f68a06e66c61f73c689cffeb68f44f833167911a3b598e15739c99b0bc3",
+    "chapters/chapter-097.json": "39b228d2f6d6be6e2f2c4a6f9594f6594ed0d1276b9bb9db9dc2e88dcd16f2e5",
+    "chapters/chapter-098.json": "2e9c833f05b6c85380004461e212f72afdb6b522f4e19e70f7f98291dc09ee3f",
+    "chapters/chapter-099.json": "5ee75a74d73cf651fe16c4d5cec667f929ff265fb16654f98267a02c3cffcc97",
+    "chapters/chapter-100.json": "f1803dd98294fe4c7f1387e87baf9232a1ec00ea47d19e57a6adf29da496976e"
+  },
+  "supersedes_dataset_path": "datasets/development/ai-reviewed-91-100-20261027",
+  "editorial_resolution": "../../../docs/corpus-completion-2026-10-28.md"
+}
