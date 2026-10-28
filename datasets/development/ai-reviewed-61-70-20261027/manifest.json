@@ -1,0 +1,88 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.27.1",
+  "created_at": "2026-10-27T12:00:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      61,
+      70
+    ],
+    "kurals": [
+      601,
+      700
+    ]
+  },
+  "counts": {
+    "chapters": 10,
+    "kurals": 100,
+    "status_no_issue_found": 80,
+    "status_flagged": 20,
+    "needs_tamil_reviewer": 100,
+    "needs_scan_review": 3
+  },
+  "coverage": {
+    "canonical_tamil": 100,
+    "ai_idiomatic_translation_drafts": 100,
+    "idiomatic_candidates_withheld": 0,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0
+  },
+  "review_summary": {
+    "finding_categories": {
+      "archaic_or_unclear_wording": 46,
+      "extraction_or_alignment": 51,
+      "interpretive_uncertainty": 18,
+      "missing_source_context": 2,
+      "possible_meaning_error": 2,
+      "translation_difference": 104
+    },
+    "finding_severities": {
+      "informational": 203,
+      "needs_review": 20
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+    }
+  ],
+  "limitations": [
+    "All 100 records still require qualified Tamil-language review.",
+    "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "Source HTML snapshots were not present in the recovered workflow artifact for chapter(s) 66, 67; their pinned Wikisource oldids are retained, source_snapshot_sha256 is null, and the Tamil lines were reconstructed from the current Tamil Wikisource chapter text pending oldid-snapshot verification.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft.",
+    "Previously withheld meanings have commentary-backed AI-assisted editorial drafts. All review flags and human-review requirements remain; see the resolution notes for the chosen readings and alternatives."
+  ],
+  "chapter_files": {
+    "chapters/chapter-061.json": "5ec1779bb0dc752dc8194e96a955184fb1ea54e3e6e551d649a042880a28630f",
+    "chapters/chapter-062.json": "ff1267afcab53faa8878a0b069d51f43ce798cc184e5782ecef5f6415c23d9d4",
+    "chapters/chapter-063.json": "d751fb6d0e383ea8443405784368d7cf2b01e8f7ec1396944a2aaf091514ab55",
+    "chapters/chapter-064.json": "1c8e8a16ac0eceba3cb2120235dfc8d858b072d65f923eb5e68404ae5f6fd47a",
+    "chapters/chapter-065.json": "b998f5c89a4acfacaa5c23c85092583aecaba13491b7a60b736a9ad9411f23bb",
+    "chapters/chapter-066.json": "3d8ccf0658e5feb099488afa4eccb1083578ea6a698da44c060b349acf09655d",
+    "chapters/chapter-067.json": "ab3359b08ea7cb3c4df52761518c33cf9705d934d01a13f439843129158a0f22",
+    "chapters/chapter-068.json": "f2cd289f7a1e5e25a601216d5ba58d06b5299c2abdccc1c9b26fe250ea1a081a",
+    "chapters/chapter-069.json": "c986b120d966cd97f859c28574fb15e5e619ed70748f32f28c03b94bae656f20",
+    "chapters/chapter-070.json": "b4fcdb2abf0808ec22da5195b069686c253c250b3ebe429af3a2a3fc6fbd0edd"
+  },
+  "supersedes_dataset_path": "datasets/development/ai-reviewed-61-70",
+  "editorial_resolution": "../../../docs/meaning-resolutions-2026-10-27.md"
+}

@@ -1,0 +1,87 @@
+{
+  "dataset_format": "thirukkural-development-v1",
+  "dataset_version": "2026.10.27.1",
+  "created_at": "2026-10-27T12:00:00Z",
+  "status": "ai_reviewed_development",
+  "scope": {
+    "chapters": [
+      111,
+      120
+    ],
+    "kurals": [
+      1101,
+      1200
+    ]
+  },
+  "counts": {
+    "chapters": 10,
+    "kurals": 100,
+    "status_no_issue_found": 84,
+    "status_flagged": 16,
+    "needs_tamil_reviewer": 100,
+    "needs_scan_review": 2
+  },
+  "coverage": {
+    "canonical_tamil": 100,
+    "ai_idiomatic_translation_drafts": 100,
+    "idiomatic_candidates_withheld": 0,
+    "historical_english_in_this_snapshot": 0,
+    "transliteration_in_this_snapshot": 0,
+    "human_tamil_reviewed": 0
+  },
+  "review_summary": {
+    "finding_categories": {
+      "archaic_or_unclear_wording": 43,
+      "extraction_or_alignment": 59,
+      "interpretive_uncertainty": 17,
+      "missing_source_context": 16,
+      "translation_difference": 95
+    },
+    "finding_severities": {
+      "informational": 212,
+      "needs_review": 18
+    }
+  },
+  "sources": [
+    {
+      "source_id": "srinivasan-1997-wikisource",
+      "role": "canonical_tamil",
+      "work": "திருக்குறள், மூலம்",
+      "editor": "R. Srinivasan",
+      "year": "1997",
+      "host": "Tamil Wikisource",
+      "review_state": "source-pinned; human Tamil review pending"
+    },
+    {
+      "source_id": "aiyar-1916-standardebooks",
+      "role": "historical_english_review_basis",
+      "translator": "V. V. S. Aiyar",
+      "year": "1916",
+      "repository": "standardebooks/thiruvalluvar_the-kural_v-v-s-aiyar",
+      "commit": "0d14a398d6886391c369f0c3e00b0e9e1e7f4ee1",
+      "note": "Historical English was part of the AI review input but is not duplicated in this compact development snapshot."
+    }
+  ],
+  "limitations": [
+    "All 100 records still require qualified Tamil-language review.",
+    "This is a development batch, not the formal schema-1 data release; the production release remains gated on all 133 chapters / 1,330 Kurals and release checks.",
+    "All pinned Tamil Wikisource HTML snapshots for this batch were present in the recovered workflow artifact and are SHA-256 pinned at chapter level.",
+    "Transliteration is intentionally absent until the project transliteration scheme/engine is implemented and versioned.",
+    "The historical Aiyar English review basis is provenance-linked but not copied into this compact development corpus; the idiomatic layer is an AI-assisted project draft.",
+    "Previously withheld meanings have commentary-backed AI-assisted editorial drafts. All review flags and human-review requirements remain; see the resolution notes for the chosen readings and alternatives."
+  ],
+  "chapter_files": {
+    "chapters/chapter-111.json": "c9542d3239922ecad018a604601816e6f10bcbbf0f6771b35f2543fa53d34d1e",
+    "chapters/chapter-112.json": "08ac743e6b712cb89106fc613ce4f921d0a80d8ad33a48462bd6fe73d9f3b28c",
+    "chapters/chapter-113.json": "b0cf45056591c131b44a8d7625bd6f71fb6311f8c6c6de6e167d89652d2f1968",
+    "chapters/chapter-114.json": "6a7d30950767bab7ed574391165254770ed6a39784f44a43cf1cb946ddfe3490",
+    "chapters/chapter-115.json": "4618c95e96a718d6ac4fe30d3083b87fec199a084a1890b2dbabe881e7bfe5fd",
+    "chapters/chapter-116.json": "eeadde0168954cd5bc13d0f521f18df34a078f99361aa91c7e29f37b123d93a3",
+    "chapters/chapter-117.json": "7e674d3b71cb311fe0b8f86f25900a30e4949b2b6fe9e5218d18bd0570e38a86",
+    "chapters/chapter-118.json": "af823854477c7c0615769682376edfdd2b8c254cc465ebfa58116850ec1da479",
+    "chapters/chapter-119.json": "142ca0dcd162490293dea129501c32bd32a62f7fdf996c09469fd9256645afb5",
+    "chapters/chapter-120.json": "d4275e5c3397957f5ac169196022bdf2ccd20f1b5ff7b88b52f0959dfc9e68e3"
+  },
+  "supersedes_dataset_path": "datasets/development/ai-reviewed-111-120",
+  "editorial_resolution": "../../../docs/meaning-resolutions-2026-10-27.md"
+}
