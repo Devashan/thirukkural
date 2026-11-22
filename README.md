@@ -55,7 +55,7 @@ Together they provide development coverage for all 133 chapters / all 1,330 Kura
 
 ## Meaning revision — 27 October 2026
 
-New `-20261027` replacements for the 51–60 through 121–133 batches supply all 15 formerly withheld idiomatic explanations. New consumers use those replacements together with the unchanged first three batches. This gives 1,323 English drafts and seven withheld meanings; every record still awaits qualified Tamil-language review. See [the decisions and sources](docs/meaning-resolutions-2026-10-27.md). Earlier snapshots remain unchanged.
+New `-20261027` replacements for the 51–60 through 121–133 batches supply idiomatic explanations for the 15 entries that had been withheld in those ranges. New consumers use those replacements together with the unchanged first three batches. Seven other blank meanings still remained at that stage, giving 1,323 English drafts in total; every record still awaits qualified Tamil-language review. See [the decisions and sources](docs/meaning-resolutions-2026-10-27.md). Earlier snapshots remain unchanged.
 
 ## Complete reader metadata — 28 October 2026
 
